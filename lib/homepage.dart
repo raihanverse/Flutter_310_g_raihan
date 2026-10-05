@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -9,48 +8,85 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Homepage"),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 197, 201, 197),
-        //leading: Icon(Icons.home),
+        // centerTitle: true,
+        backgroundColor: const Color.fromARGB(255, 233, 107, 255),
+        foregroundColor: Colors.white,
+        // leading: Icon(Icons.home),
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person_4_outlined)),
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.menu_outlined)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.person)),
         ],
       ),
-
       drawer: Drawer(
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("accountName"),
-              accountEmail: Text("accountEmail"),
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 140, 31, 31),
-              ),
+              accountName: Text("Name"),
+              accountEmail: Text("Email"),
             ),
-
-            Divider(), //gives a line between two bs
-
             ListTile(
               title: Text("Homepage"),
-              //leading: Icon(Icons.home), icon bame jay
-              trailing: Icon(Icons.home), //icon dane jay
-              hoverColor:
-                  Colors.red[300], //cursor drawer er upre nile j colour dekhabe
+              leading: Icon(Icons.home),
+              hoverColor: Colors.pink[100],
+              onTap: () {},
+            ),
+            // Divider(),
+            Spacer(),
+            ListTile(
+              title: Text("Profile"),
+              leading: Icon(Icons.person),
+              hoverColor: Colors.pink[100],
               onTap: () {},
             ),
           ],
         ),
       ),
 
-      body: Text(
-        "Hello",
-        style: TextStyle(
-          fontSize: 50,
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.purpleAccent,
+                foregroundColor: Colors.white,
+                fixedSize: Size(100, 50),
+                side: BorderSide(),
+                elevation: 10,
+              ),
+              child: Text("TextButton"),
+            ),
+            SizedBox(width: 10),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color.fromARGB(255, 215, 129, 230),
+                foregroundColor: Colors.white,
+                fixedSize: Size(150, 20),
+                side: BorderSide(),
+              ),
+              child: Text("ElevatedButton"),
+            ),
 
-          color: const Color.fromARGB(255, 7, 150, 163),
+            OutlinedButton(onPressed: () {}, child: Text("OutlinedButton")),
+            IconButton(
+              onPressed: () {},
+              style: IconButton.styleFrom(),
+              icon: Icon(Icons.login),
+            ),
+          ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        tooltip: "Add",
+        backgroundColor: Colors.purpleAccent,
+        foregroundColor: Colors.white,
+        shape: BeveledRectangleBorder(),
+        child: Icon(Icons.add),
       ),
     );
   }
