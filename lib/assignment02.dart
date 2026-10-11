@@ -7,21 +7,21 @@ class Assignment3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 200,
-        width: 200,
-        padding: const EdgeInsets.all(20),
-        margin: const EdgeInsets.all(30),
+        height: 250,
+        width: 240,
+        padding: const EdgeInsets.all(35),
+        margin: const EdgeInsets.all(35),
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          border: Border.all(width: 5, color: Colors.blue),
+          border: Border.all(width: 5, color: const Color.fromARGB(255, 2, 34, 59)),
           borderRadius: const BorderRadius.all(Radius.circular(20)),
           gradient: const RadialGradient(
-            colors: [Colors.purpleAccent, Colors.purple],
+            colors: [Color.fromARGB(255, 221, 140, 236), Color.fromARGB(255, 99, 11, 114)],
           ),
         ),
         child: const Text(
           "Hello Container",
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255)),
         ),
       ),
     );
