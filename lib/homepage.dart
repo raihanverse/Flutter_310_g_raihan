@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-//import 'package:flutter/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -8,115 +7,85 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Homepage"),
-        centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 124, 18, 64),
+        title: Text("Home Page", style: TextStyle(fontSize: 30)),
+        backgroundColor: const Color.fromARGB(255, 92, 28, 43),
         //leading: Icon(Icons.home),
+        foregroundColor: Colors.white,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.person_4_outlined)),
           IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.menu_outlined)),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notification_add_rounded),
+          ),
         ],
       ),
-
       drawer: Drawer(
-        //drawer options
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("accountName"),
-              accountEmail: Text("accountEmail"),
-              decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 140, 31, 31),
-              ),
+              accountName: Text("Ahsan Trishan"),
+              accountEmail: Text("nigwolvie@gmail.com"),
+              decoration: BoxDecoration(color: Color.fromARGB(255, 55, 16, 27)),
             ),
-
-            Divider(), //gives a line between two
-
+            ListTile(
+              title: Text("Home Page"),
+              onTap: () {},
+              leading: Icon(Icons.home),
+              hoverColor: const Color.fromARGB(150, 221, 217, 217),
+            ),
             //Spacer(),
             ListTile(
-              //drawer er item
-              title: Text("Homepage"),
-              //leading: Icon(Icons.home), icon bame jay
-              trailing: Icon(Icons.home), //icon dane jay
-              hoverColor: const Color.fromARGB(255, 136, 44, 44), //cursor
+              title: Text("Profile"),
               onTap: () {},
+              leading: Icon(Icons.person),
+              hoverColor: const Color.fromARGB(150, 221, 217, 217),
             ),
-
-            Divider(),
-            Spacer(), //about us
             ListTile(
-              title: Text("About Us"),
-              //leading: Icon(Icons.home), icon bame
-              trailing: Icon(Icons.question_mark), //icon dane
-              hoverColor: const Color.fromARGB(255, 136, 44, 44), //
+              title: Text("Dashboard"),
               onTap: () {},
+              leading: Icon(Icons.dashboard),
+              hoverColor: const Color.fromARGB(150, 221, 217, 217),
             ),
           ],
         ),
       ),
-
-      // body: Text(
-      //   "Hello",
-      //   style: TextStyle(
-      //     fontSize: 50,
-
-      //     color: const Color.fromARGB(255, 7, 150, 163),
-      //   ),
-      // ),
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center, //x axis
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: TextButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.deepPurple,
-                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-                      fixedSize: Size(300, 105),
-                      side: BorderSide(),
-                      elevation: 50,
-                    ),
-                    child: Text("icon, text anything"),
+                TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 128, 45, 65),
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(140, 50),
+                    side: BorderSide(),
+                    elevation: 10,
                   ),
+                  child: Text("TextButton"),
+                ),
+                SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color.fromARGB(255, 111, 35, 53),
+                    foregroundColor: Colors.white,
+                    fixedSize: Size(140, 50),
+                    side: BorderSide(),
+                  ),
+                  child: Text("ElevatedButton"),
                 ),
 
-                SizedBox(width: 25),
+                OutlinedButton(onPressed: () {}, child: Text("OutlinedButton")),
 
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.deepPurple,
-                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-                      fixedSize: Size(300, 65),
-                      side: BorderSide(),
-                      //elevation: 50, //3d effect dey
-                    ),
-                    child: Text("icon, text anything"),
-                  ),
-                ),
-
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: IconButton(
-                    onPressed: () {},
-                    style: TextButton.styleFrom(
-                      backgroundColor: Colors.deepPurple,
-                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
-                      fixedSize: Size(100, 25),
-                      side: BorderSide(),
-                      elevation: 50,
-                    ),
-                    icon: Icon(Icons.animation),
-                  ),
+                IconButton(
+                  onPressed: () {},
+                  style: IconButton.styleFrom(),
+                  icon: Icon(Icons.login),
                 ),
               ],
             ),
@@ -125,32 +94,53 @@ class HomePage extends StatelessWidget {
             height: 200,
             width: 200,
             padding: EdgeInsets.all(20),
-            alignment: Alignment.bottomRight,
             margin: EdgeInsets.all(20),
+            alignment: Alignment.bottomCenter,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 162, 73, 177),
-              border: Border.all(width: 5, color: Colors.lightBlue),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-              shape: BoxShape.circle,
+              border: Border.all(
+                width: 5,
+                color: const Color.fromARGB(255, 80, 7, 2),
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(10)),
               gradient: RadialGradient(
                 colors: [
-                  Colors.purple,
-                  const Color.fromARGB(355, 34, 3434, 434),
+                  const Color.fromARGB(255, 111, 35, 53),
+                  const Color.fromARGB(255, 145, 51, 77),
                 ],
               ),
             ),
-            child: Text("Hello Containter"),
+            child: Text(
+              "Hello Container!",
+              style: TextStyle(color: Colors.white),
+            ),
+          ), // this comma is needed
+          // new part starts here
+          SizedBox(
+            height: 200,
+            width: 200,
+            child: Card(
+              margin: EdgeInsets.all(20),
+              color: Colors.purple,
+              shadowColor: Colors.black12,
+              elevation: 20,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Center(child: Text("Hello Card")),
+            ),
+            Image.assets('assets/images/download.jpg'),
+            Image.network(''),
           ),
+
+          // new part ends here
         ],
       ),
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         tooltip: "Add",
-        backgroundColor: Colors.blueAccent,
-        foregroundColor: Colors.cyanAccent,
-        hoverColor: Colors.deepPurpleAccent,
-        shape: RoundedRectangleBorder(),
+        backgroundColor: const Color.fromARGB(255, 92, 28, 43),
+        foregroundColor: Colors.white,
+        shape: BeveledRectangleBorder(),
         child: Icon(Icons.add),
       ),
     );
