@@ -23,8 +23,8 @@ class HomePage extends StatelessWidget {
         child: Column(
           children: [
             UserAccountsDrawerHeader(
-              accountName: Text("Ahsan Trishan"),
-              accountEmail: Text("nigwolvie@gmail.com"),
+              accountName: Text("Raihan Ahmed"),
+              accountEmail: Text("raihan@gmail.com"),
               decoration: BoxDecoration(color: Color.fromARGB(255, 55, 16, 27)),
             ),
             ListTile(
@@ -40,6 +40,7 @@ class HomePage extends StatelessWidget {
               leading: Icon(Icons.person),
               hoverColor: const Color.fromARGB(150, 221, 217, 217),
             ),
+            
             ListTile(
               title: Text("Dashboard"),
               onTap: () {},
@@ -128,9 +129,9 @@ class HomePage extends StatelessWidget {
               ),
               child: Center(child: Text("Hello Card")),
             ),
-            Image.assets('assets/images/download.jpg'),
-            Image.network(''),
           ),
+          Image.asset('assets/images/download.JPG'),
+          Image.network(''),
 
           // new part ends here
         ],
